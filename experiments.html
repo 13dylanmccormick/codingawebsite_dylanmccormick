@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Experiments</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+	#container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;;
+	  }
+	
+	.square {
+      width: 100px;
+      height: 100px;
+      background-color: #A500C9;
+	  border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+	  	    font-family: "Outfit", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 20px;
+		align-content:center;
+      color: white;
+      user-select: none;
+    }
+
+	.squaretoo {
+      width: 75px;
+      height: 75px;
+      background-color: #A500C9;
+	  border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+	  	    font-family: "Outfit", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 20px;
+		text-align: center;
+      color: white;
+      user-select: none;
+    }
+</style>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+  <ul class="topnav">
+	  <li><a class="active" href="experiments.html"><strong>EXPERIMENTS</strong></a></li>
+	  <li class="right"><a href="toolkit.html"><strong>TOOLKIT</strong></a></li>
+	  <li class="right"><a href="work.html"><strong>WORK</strong></a></li>
+	  <li class="right"><a href="index.html"><strong>ABOUT</strong></a></li>
+  </ul>
+<section>
+	<span class="glow"><h1 class="glow"><span>EXPERIMENTS</span></h1></span>
+	<h3 class="spin" style="text-align: center"> Messing around with CSS</h3>
+</section>
+	
+<section>
+	<div class="twisty"><p style="transform: rotate(81deg)">This text is on an angle!</p><p style="transform: rotate(78deg)">This text is on an angle!</p><p style="transform: rotate(75deg)">This text is on an angle!</p><p style="transform: rotate(72deg)">This text is on an angle!</p><p style="transform: rotate(69deg)">This text is on an angle!</p><p style="transform: rotate(66deg)">This text is on an angle!</p><p style="transform: rotate(63deg)">This text is on an angle!</p><p style="transform: rotate(60deg)">This text is on an angle!</p><p style="transform: rotate(57deg)">This text is on an angle!</p><p style="transform: rotate(54deg)">This text is on an angle!</p><p style="transform: rotate(51deg)">This text is on an angle!</p><p style="transform: rotate(48deg)">This text is on an angle!</p><p style="transform: rotate(45deg)">This text is on an angle!</p><p style="transform: rotate(42deg)">This text is on an angle!</p><p style="transform: rotate(39deg)">This text is on an angle!</p><p style="transform: rotate(36deg)">This text is on an angle!</p><p style="transform: rotate(33deg)">This text is on an angle!</p><p style="transform: rotate(30deg)">This text is on an angle!</p><p style="transform: rotate(27deg)">This text is on an angle!</p><p style="transform: rotate(24deg)">This text is on an angle!</p><p style="transform: rotate(21deg)">This text is on an angle!</p><p style="transform: rotate(18deg)">This text is on an angle!</p><p style="transform: rotate(15deg)">This text is on an angle!</p><p style="transform: rotate(12deg)">This text is on an angle!</p><p style="transform: rotate(9deg)">This text is on an angle!</p><p style="transform: rotate(6deg)">This text is on an angle!</p><p style="transform: rotate(3deg)">This text is on an angle!</p><p style="transform: rotate(0deg)">This text is on an angle!</p></div>
+
+<section>
+
+<section>
+  <div id="container">
+    <div class="square">CLICK ME</div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+
+    function createSquare() {
+      const newSquare = document.createElement('div');
+      newSquare.classList.add('squaretoo');
+      newSquare.textContent = 'AND ME';
+	  newSquare.possibleSizes = [50, 80, 100, 120, 150, 200];
+	items.forEach(item => {
+		const randomIndex = Math.floor(Math.random() * possibleSizes.length);
+      const randomSize = possibleSizes[randomIndex];
+
+      item.style.width = `${randomSize}px`;
+      item.style.height = `${randomSize}px`;
+	});
+      
+      // Add click event to the newly created square
+      newSquare.addEventListener('click', createSquare);
+      
+      container.appendChild(newSquare);
+    }
+
+    // Attach click listener to the initial square
+    document.querySelector('.square').addEventListener('click', createSquare);
+	  
+	// Randomize square size, hopefully?
+	const items = document.querySelectorAll('.square')
+	const possibleSizes = [50, 80, 100, 120, 150, 200];
+	items.forEach(item => {
+		const randomIndex = Math.floor(Math.random() * possibleSizes.length);
+      const randomSize = possibleSizes[randomIndex];
+
+      item.style.width = `${randomSize}px`;
+      item.style.height = `${randomSize}px`;
+	});
+  </script>
+</section>	
+	
+<style>
+  .triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 200px solid transparent;
+	border-right: 42px solid transparent;
+	border-bottom: 120px solid #a500c9;
+	float: right;
+}
+</style>
+  <div class= "multifloatleft">
+	<div class="triangle-up"></div>
+	<p style="text-align: center">TRIANGLE!</p>
+  </div>
+<p style="text-align: center">Did you try hovering on the titles?</p>
+</section>
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Work</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+<style>
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding:;
+}
+
+.gallery-item {
+  position: relative;
+  width: calc(33% - 17px);
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+/* Modal image */
+.modal-content {
+  position: relative;
+  width: 60%;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 5px;
+  overflow: hidden;
+  animation: zoomIn 0.5s;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.6);}
+  to {transform: scale(1);}
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Caption of modal image */
+.caption {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-item {
+     width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-item  {
+    width: calc(100% - 20px);
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+  <ul class="topnav">
+	<li class="active"><a class="active" href="work.html"><strong>WORK</strong></a></li>
+	<li class="right"><a href="experiments.html"><strong>EXPERIMENTS</strong></a></li>
+	<li class="right"><a href="toolkit.html"><strong>TOOLKIT</strong></a></li>
+	<li class="right"><a href="index.html"><strong>ABOUT</strong></a></li>
+  </ul>
+<section style="background-image: url('images/backgroundheader.png'); padding-bottom: 5%">
+	<h1>SOME OF MY WORK</h1>
+</section>
+
+<section style="background-color: #EEE6F0">
+<h2>Photography</h2>
+<h3 class="work" style="text-align: center">Each of these photographs were taken by me using a DSLR camera and edited in Adobe Lightroom during the ARTD 275: Photography II course at North Central College. The ones here are some of my favorites.</h3>
+<!-- Modal gallery of photography -->
+<div class="gallery" style="">
+  <img src="images/DSC_0301.jpg" alt="Overpass in Bronzeville, Chicago, IL" class="gallery-item" onclick="openModal('modal1', 'Overpass in Bronzeville, Chicago, IL')" width="600" height="400">
+  <img src="images/DSC_0382.jpg" alt="Ping Tom Memorial Park in Chinatown, Chicago, IL" class="gallery-item" onclick="openModal('modal2', 'Ping Tom Memorial Park in Chinatown, Chicago, IL')" width="600" height="400">
+  <img src="images/DSC_0028.jpg" alt="Church in Naperville, IL" class="gallery-item" onclick="openModal('modal3', 'Church in Naperville, IL')" width="600" height="400">
+  <img src="images/Choice-1.jpg" alt="Sky on a sunny day" class="gallery-item" onclick="openModal('modal4', 'Sky on a sunny day')" width="600" height="400">
+  <img src="images/DSC_0110.jpg" alt="Ski hill in Lisle, IL" class="gallery-item" onclick="openModal('modal5', 'Ski hill in Lisle, IL')" width="600" height="400">
+  <img src="images/DSC_0060.jpg" alt="Woodpecker among trees" class="gallery-item" onclick="openModal('modal6', 'Woodpecker among trees')" width="600" height="400">
+</div>
+<!-- Modal images -->
+<div id="modal1" class="modal">
+  <span class="close" onclick="closeModal('modal1')">&times;</span>
+  <img src="images/DSC_0301.jpg" alt="Overpass in Bronzeville, Chicago, IL" class="modal-content" width="600" height="400">
+  <div class="caption"></div>
+</div>
+<div id="modal2" class="modal">
+	<span class="close" onclick="closeModal('modal2')">&times;</span>
+	<img src="images/DSC_0382.jpg" alt="Ping Tom Memorial Park in Chinatown, Chicago, IL" class="modal-content" width="60%" height="60%">
+	<div class="caption"></div>
+</div>
+<div id="modal3" class="modal">
+	<span class="close" onclick="closeModal('modal3')">&times;</span>
+	<img src="images/DSC_0028.jpg" alt="Church in Naperville, IL" class="modal-content" width="60%" height="60%">
+	<div class="caption"></div>
+</div>
+<div id="modal4" class="modal">
+	<span class="close" onclick="closeModal('modal4')">&times;</span>
+	<img src="images/Choice-1.jpg" alt="Sky on a sunny day" class="modal-content" width="60%" height="60%">
+	<div class="caption"></div>
+</div>
+<div id="modal5" class="modal">
+	<span class="close" onclick="closeModal('modal5')">&times;</span>
+	<img src="images/DSC_0110.jpg" alt="Cki hill in Lisle, IL" class="modal-content" width="60%" height="60%">
+	<div class="caption"></div>
+</div>
+<div id="modal6" class="modal">
+	<span class="close" onclick="closeModal('modal6')">&times;</span>
+	<img src="images/DSC_0060.jpg" alt="Woodpecker among trees" class="modal-content" width="60%" height="60%">
+	<div class="caption"></div>
+</div>
+
+<!-- JavaScript for the modal -->
+<script>
+function openModal(modalId, caption) {
+  let modal = document.getElementById(modalId);
+  modal.style.display = "flex";
+  modal.classList.add("show");
+  let message = modal.querySelector(".caption");
+  message.innerText = caption;
+}
+
+function closeModal(modalId) {
+  let modal = document.getElementById(modalId);
+  modal.classList.remove("show");
+  setTimeout(function () {
+    modal.style.display = "none";
+    modal.querySelector(".caption").innerText = "";
+  }, 300);
+}
+</script>
+</section>
+	
+<section style="background-color: #EEE6F0">
+<h2>Student Success Center - Client Work</h2>
+
+<h3 class="work" style="text-align: center">As part of the ARTD 395: Design Agency course at North Central College, I and two other students worked for our Student Success Center. We were asked to design stickers for their then brand-new Wall of Achievements, as awards for the outstanding students who were recognized on it. These are some of my designs.</h3>
+
+<section class="flexContainer">
+  <div><img src="images/sticker1.png" width="100%" alt=""/></div>
+  <div><img src="images/sticker2.png" width="100%" alt=""/></div>
+  <div><img src="images/sticker3.png" width="100%" alt=""/></div>
+  <div><img src="images/stickerWoA1.png" width="100%" alt=""/></div>
+  <div><img src="images/stickerWoA2.png" width="100%" alt=""></div>
+</section>
+</section>
+	
+<footer>
+	</footer>
+
+	
+	
+	
+<!-- DONT TOUCH THIS -->
+</body>
+</html>
